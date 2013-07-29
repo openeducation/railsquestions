@@ -39,6 +39,18 @@ gem 'thin', '~> 1.5.1'
 
 gem 'haml-rails', '~> 0.4'
 
+gem 'merit', '~> 1.6.1'
+
+gem 'acts_as_votable', github: 'ryanto/acts_as_votable'
+
+gem 'protected_attributes'
+
+gem 'clearance', '1.0.0.rc7'
+
+gem 'bootstrap-sass-rails', '~> 2.3.2.0'
+
+gem 'high_voltage', '~> 1.2.4'
+
 group :devlopment, :test do
   gem 'rspec-rails', '~> 2.14.0'
   gem 'capybara', '~> 2.1.0'
