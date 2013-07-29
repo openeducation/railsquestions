@@ -1,0 +1,42 @@
+!!!
+%html
+  %head
+    %title Railsquestions
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    #flash
+      - flash.each do |key, value|
+        %div{:class => "flash #{key}"}= value
+    .navbar.navbar-inverse.navbar-fixed-top
+      .navbar-inner
+        .container
+          %button.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse", :type => "button"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to "Rails Questions", root_url, class: 'brand'
+          .nav-collapse.collapse
+            %ul.nav
+              %li.active
+                %a{:href => "#"} Home
+              %li
+                %a{:href => "#about"} About
+              %li
+                %a{:href => "#contact"} Contact
+          .pull-right
+            - if signed_in?
+              .btn-group
+                .btn.btn-info.dropdown-toggle{"data-toggle" => "dropdown"}
+                  Signed in as: #{current_user.email}
+                  %span.caret
+
+                %ul.dropdown-menu
+                  %li= link_to 'Sign out', sign_out_path, :method => :delete
+            - else
+              = link_to 'Sign in', sign_in_path, class: 'btn btn-info'
+          / /.nav-collapse
+    .container
+      = yield
+    / /container
