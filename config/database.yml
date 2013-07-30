@@ -49,9 +49,7 @@ test:
   encoding: unicode
   database: railsquestions_test
   pool: 5
-  username: railsquestions
-  password: railsquestions
-  host: localhost
+
 
 production:
   adapter: postgresql
