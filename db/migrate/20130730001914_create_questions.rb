@@ -5,7 +5,7 @@ class CreateQuestions < ActiveRecord::Migration
       t.belongs_to :user, index: true
       t.text :body
       t.string :slug
-      t.string :closed, default: false, null: :false
+      t.boolean :closed, default: false, null: :false
       t.datetime :closed_at
 
       t.timestamps
