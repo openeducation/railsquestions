@@ -12,6 +12,7 @@ describe Question do
   it { should respond_to(:closed) }
   it { should respond_to(:closed?) }
   it { should respond_to(:close) }
+  it { should respond_to(:answers) } 
 
   describe "close" do
     before { @question.close }

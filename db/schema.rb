@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130730001914) do
+ActiveRecord::Schema.define(version: 20130730140458) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "answers", force: true do |t|
+    t.text     "body"
+    t.integer  "user_id"
+    t.integer  "question_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
+  add_index "answers", ["user_id"], name: "index_answers_on_user_id", using: :btree
 
   create_table "badges_sashes", force: true do |t|
     t.integer  "badge_id"
@@ -61,7 +75,7 @@ ActiveRecord::Schema.define(version: 20130730001914) do
     t.integer  "user_id"
     t.text     "body"
     t.string   "slug"
-    t.string   "closed"
+    t.string   "closed",     default: "f"
     t.datetime "closed_at"
     t.datetime "created_at"
     t.datetime "updated_at"
