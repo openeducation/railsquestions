@@ -51,6 +51,8 @@ gem 'bootstrap-sass-rails', '~> 2.3.2.0'
 
 gem 'high_voltage', '~> 1.2.4'
 
+gem 'stamp'
+
 group :devlopment, :test do
   gem 'rspec-rails', '~> 2.14.0'
   gem 'capybara', '~> 2.1.0'
