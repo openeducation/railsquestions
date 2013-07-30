@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130727024156) do
+ActiveRecord::Schema.define(version: 20130730001914) do
 
   create_table "badges_sashes", force: true do |t|
     t.integer  "badge_id"
@@ -55,6 +55,19 @@ ActiveRecord::Schema.define(version: 20130727024156) do
     t.integer "sash_id"
     t.string  "category", default: "default"
   end
+
+  create_table "questions", force: true do |t|
+    t.string   "title"
+    t.integer  "user_id"
+    t.text     "body"
+    t.string   "slug"
+    t.string   "closed"
+    t.datetime "closed_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "questions", ["user_id"], name: "index_questions_on_user_id", using: :btree
 
   create_table "sashes", force: true do |t|
     t.datetime "created_at"
