@@ -19,8 +19,6 @@ development:
   encoding: unicode
   database: railsquestions_development
   pool: 5
-  username: railsquestions
-  password: railsquestions
   host: localhost
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -48,6 +46,7 @@ test:
   adapter: postgresql
   encoding: unicode
   database: railsquestions_test
+  host: localhost
   pool: 5
 
 
@@ -56,6 +55,4 @@ production:
   encoding: unicode
   database: railsquestions_production
   pool: 5
-  username: railsquestions
-  password: railsquestions
   host: localhost
