@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130730140458) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 20130730233225) do
 
   create_table "answers", force: true do |t|
     t.text     "body"
@@ -37,6 +34,14 @@ ActiveRecord::Schema.define(version: 20130730140458) do
   add_index "badges_sashes", ["badge_id", "sash_id"], name: "index_badges_sashes_on_badge_id_and_sash_id", using: :btree
   add_index "badges_sashes", ["badge_id"], name: "index_badges_sashes_on_badge_id", using: :btree
   add_index "badges_sashes", ["sash_id"], name: "index_badges_sashes_on_sash_id", using: :btree
+
+  create_table "close_reasons", force: true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.boolean  "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "merit_actions", force: true do |t|
     t.integer  "user_id"
@@ -75,12 +80,14 @@ ActiveRecord::Schema.define(version: 20130730140458) do
     t.integer  "user_id"
     t.text     "body"
     t.string   "slug"
-    t.string   "closed",     default: "f"
+    t.boolean  "closed",          default: false
+    t.integer  "close_reason_id"
     t.datetime "closed_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "questions", ["close_reason_id"], name: "index_questions_on_close_reason_id", using: :btree
   add_index "questions", ["user_id"], name: "index_questions_on_user_id", using: :btree
 
   create_table "sashes", force: true do |t|

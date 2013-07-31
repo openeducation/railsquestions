@@ -3,8 +3,12 @@ class Question < ActiveRecord::Base
   
   has_many :answers
 
-  def close
+  belongs_to :close_reason
+
+  def close(reason)
 	self.closed = true	
-	self.closed_at = Time.now.utc	
+	self.closed_at = Time.now.utc
+	self.close_reason = reason
+	self.save!
   end
 end
