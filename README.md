@@ -15,3 +15,8 @@
 4. Install the gems
   
   $ bundle install
+
+5. Copy the database config
+	$ cp config/database.yml.sample config/database.yml
+
+6. Edit the database config for your system
