@@ -1,7 +1,10 @@
 require 'spec_helper'
 
 describe Question do
-  before { @question = Question.new }
+  before do
+    @question = Question.new
+    @close_reason = create(:close_reason)
+  end
 
   subject { @question }
 
@@ -15,8 +18,9 @@ describe Question do
   it { should respond_to(:answers) } 
 
   describe "close" do
-    before { @question.close }
+    before { @question.close(@close_reason) }
     its(:closed) { should eql true}
     its(:closed_at.to_s) { should = "#{Time.now.utc.stamp('2013-07-30 00:57:40 UTC') }"}
+    its(:close_reason) { should eql @close_reason }
   end
 end
