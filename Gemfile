@@ -43,7 +43,7 @@ gem 'merit', '~> 1.6.1'
 
 gem 'acts_as_votable', github: 'ryanto/acts_as_votable'
 
-gem 'protected_attributes'
+# gem 'protected_attributes'
 
 gem 'clearance', '1.0.0.rc7'
 
