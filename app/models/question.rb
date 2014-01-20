@@ -3,6 +3,7 @@ class Question < ActiveRecord::Base
   
   has_many :answers
 
+  has_many :flaggings, counter_cache: :flag_count
   belongs_to :close_reason
 
   def close(reason)
