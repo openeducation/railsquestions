@@ -161,6 +161,7 @@ GEM
       activesupport (>= 3.0)
       sprockets (~> 2.8)
     stamp (0.5.0)
+    state_machine (1.2.0)
     thin (1.5.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
