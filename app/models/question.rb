@@ -15,5 +15,10 @@ class Question < ActiveRecord::Base
   def flag_count
     self.flaggings.count
   end
+
+  def flag(user, reason, question)
+    if self.flaggings.where("user_id = ?", user.id).to_a.count == 0
+      Flagging.create(flaggable: question, user: user, flag_reason: reason, question_id: question.id)
+  	end
   end
 end
