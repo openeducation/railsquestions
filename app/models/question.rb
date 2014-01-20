@@ -11,5 +11,9 @@ class Question < ActiveRecord::Base
 	self.closed_at = Time.now.utc
 	self.close_reason = reason
 	self.save!
+
+  def flag_count
+    self.flaggings.count
+  end
   end
 end
