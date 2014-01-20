@@ -43,7 +43,7 @@ gem 'merit', '~> 1.6.1'
 
 gem 'acts_as_votable', github: 'ryanto/acts_as_votable'
 
-gem 'protected_attributes'
+# gem 'protected_attributes'
 
 gem 'clearance', '1.0.0.rc7'
 
@@ -53,6 +53,8 @@ gem 'high_voltage', '~> 1.2.4'
 
 gem 'stamp'
 
+gem 'state_machine', '~> 1.2.0'
+
 group :devlopment, :test do
   gem 'rspec-rails', '~> 2.14.0'
   gem 'capybara', '~> 2.1.0'
@@ -60,6 +62,7 @@ group :devlopment, :test do
   gem 'simplecov', '~> 0.7.1'
   gem 'better_errors', '~> 0.9.0'
   gem 'binding_of_caller', '~> 0.7.2'
+  gem 'pry'
 end
 # Use unicorn as the app server
 # gem 'unicorn'
