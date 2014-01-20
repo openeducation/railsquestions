@@ -62,6 +62,7 @@ group :devlopment, :test do
   gem 'simplecov', '~> 0.7.1'
   gem 'better_errors', '~> 0.9.0'
   gem 'binding_of_caller', '~> 0.7.2'
+  gem 'pry'
 end
 # Use unicorn as the app server
 # gem 'unicorn'
